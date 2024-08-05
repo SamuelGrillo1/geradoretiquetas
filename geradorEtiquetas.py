@@ -5,7 +5,6 @@ from reportlab.pdfgen import canvas
 from reportlab.lib import colors
 import os
 
-# Caminho relativo ao arquivo Excel
 file_path = 'PN_Mangueira.xlsx'
 
 try:
@@ -85,7 +84,7 @@ try:
                 file_name=pdf_path,
                 mime="application/pdf"
             )
-        os.remove(pdf_path)  # Limpa o arquivo PDF após o download
+        os.remove(pdf_path)  
 
     st.title("Gerador de Etiquetas de Mangueiras")
     st.header("Insira as Informações")
