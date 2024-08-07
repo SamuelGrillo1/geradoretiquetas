@@ -12,11 +12,11 @@ try:
     df.columns = df.columns.str.strip()
 
     def create_label(os, part_number, df):
-        if not part_number.isdigit():
-            st.error("Part Number deve ser um número válido!")
-            return
+        # Remove spaces and ensure the Part Number is treated as a string
+        part_number = part_number.strip()
 
-        row = df[df['Part Number'] == int(part_number)]
+        # Check if the Part Number is present in the DataFrame
+        row = df[df['Part Number'].astype(str) == part_number]
 
         if row.empty:
             st.error("Part Number não encontrado!")
