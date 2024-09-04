@@ -12,10 +12,9 @@ try:
     df.columns = df.columns.str.strip()
 
     def create_label(os, part_number, df):
-        # Remove spaces and ensure the Part Number is treated as a string
+       
         part_number = part_number.strip()
-
-        # Check if the Part Number is present in the DataFrame
+        
         row = df[df['Part Number'].astype(str) == part_number]
 
         if row.empty:
